@@ -14,11 +14,11 @@ from __future__ import annotations
 import hashlib, json, os, platform, shutil, subprocess, sys, tarfile, time, urllib.request, zipfile
 from pathlib import Path
 
-__version__ = "151.0.7908.0"
+__version__ = "151.0.7908.0.post1"
 __all__ = ["Fortress", "resolve_platform"]
 
 _REPO = "tiliondev/fortress"
-_TAG = f"v{__version__}"
+_TAG = "v151.0.7908.0"   # engine release tag (decoupled from package version)
 _DOCKER_IMAGE = "arham766/fortress:latest"
 _CACHE = Path(os.environ.get("FORTRESS_BROWSERS_PATH",
                              Path.home() / ".cache" / "tilion-fortress"))
