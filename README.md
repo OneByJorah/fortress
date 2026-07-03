@@ -153,21 +153,38 @@ Fortress *is* the browser for your agent — raw CDP on `:9222`, no stealth plug
 
 **Option 1 — open it pre-loaded in a chat assistant.** One click; it reads our [AGENTS.md](AGENTS.md) and walks you through the whole setup:
 
-[![Ask ChatGPT](https://img.shields.io/badge/Ask-ChatGPT-10A37F?logo=openai&logoColor=white)](https://chatgpt.com/?q=Help%20me%20set%20up%20Fortress%2C%20an%20open-source%20stealth%20Chromium%20engine%2C%20for%20my%20browser%20automation.%20First%20read%20the%20setup%20guide%20at%20https%3A%2F%2Fgithub.com%2Ftiliondev%2Ffortress%2Fblob%2Fmain%2FAGENTS.md%20then%20walk%20me%20through%3A%201%29%20launching%20Fortress%20%28Docker%3A%20docker%20run%20-d%20--rm%20-p%209222%3A9222%20tilion%2Ffortress%3Alatest%2C%20or%20pip%2Fnpm%20install%20tilion-fortress%29%2C%202%29%20connecting%20my%20Playwright%20or%20Puppeteer%20code%20over%20CDP%20to%20http%3A%2F%2Flocalhost%3A9222%2C%203%29%20keeping%20my%20existing%20automation%20logic.%20Do%20NOT%20add%20puppeteer-stealth%20or%20JS%20fingerprint%20patches%20%E2%80%94%20Fortress%20spoofs%20the%20fingerprint%20in%20the%20engine%27s%20C%2B%2B.) [![Ask Claude](https://img.shields.io/badge/Ask-Claude-D97757?logo=claude&logoColor=white)](https://claude.ai/new?q=Help%20me%20set%20up%20Fortress%2C%20an%20open-source%20stealth%20Chromium%20engine%2C%20for%20my%20browser%20automation.%20First%20read%20the%20setup%20guide%20at%20https%3A%2F%2Fgithub.com%2Ftiliondev%2Ffortress%2Fblob%2Fmain%2FAGENTS.md%20then%20walk%20me%20through%3A%201%29%20launching%20Fortress%20%28Docker%3A%20docker%20run%20-d%20--rm%20-p%209222%3A9222%20tilion%2Ffortress%3Alatest%2C%20or%20pip%2Fnpm%20install%20tilion-fortress%29%2C%202%29%20connecting%20my%20Playwright%20or%20Puppeteer%20code%20over%20CDP%20to%20http%3A%2F%2Flocalhost%3A9222%2C%203%29%20keeping%20my%20existing%20automation%20logic.%20Do%20NOT%20add%20puppeteer-stealth%20or%20JS%20fingerprint%20patches%20%E2%80%94%20Fortress%20spoofs%20the%20fingerprint%20in%20the%20engine%27s%20C%2B%2B.) [![Ask Gemini](https://img.shields.io/badge/Ask-Gemini-1C69FF?logo=googlegemini&logoColor=white)](https://gemini.google.com/app?q=Help%20me%20set%20up%20Fortress%2C%20an%20open-source%20stealth%20Chromium%20engine%2C%20for%20my%20browser%20automation.%20First%20read%20the%20setup%20guide%20at%20https%3A%2F%2Fgithub.com%2Ftiliondev%2Ffortress%2Fblob%2Fmain%2FAGENTS.md%20then%20walk%20me%20through%3A%201%29%20launching%20Fortress%20%28Docker%3A%20docker%20run%20-d%20--rm%20-p%209222%3A9222%20tilion%2Ffortress%3Alatest%2C%20or%20pip%2Fnpm%20install%20tilion-fortress%29%2C%202%29%20connecting%20my%20Playwright%20or%20Puppeteer%20code%20over%20CDP%20to%20http%3A%2F%2Flocalhost%3A9222%2C%203%29%20keeping%20my%20existing%20automation%20logic.%20Do%20NOT%20add%20puppeteer-stealth%20or%20JS%20fingerprint%20patches%20%E2%80%94%20Fortress%20spoofs%20the%20fingerprint%20in%20the%20engine%27s%20C%2B%2B.)
+[![Ask ChatGPT](https://img.shields.io/badge/Ask-ChatGPT-10A37F?logo=openai&logoColor=white)](https://chatgpt.com/?q=Help%20me%20set%20up%20Fortress%2C%20an%20open-source%20stealth%20Chromium%20engine%2C%20for%20my%20browser%20automation.%20First%20read%20the%20setup%20guide%20at%20https%3A%2F%2Fgithub.com%2Ftiliondev%2Ffortress%2Fblob%2Fmain%2FAGENTS.md%20then%20walk%20me%20through%3A%201%29%20launching%20Fortress%20%28Docker%3A%20docker%20run%20-d%20--rm%20-p%209222%3A9222%20tilion%2Ffortress%3Alatest%2C%20or%20pip%2Fnpm%20install%20tilion-fortress%29%2C%202%29%20connecting%20my%20Playwright%20or%20Puppeteer%20code%20over%20CDP%20to%20http%3A%2F%2Flocalhost%3A9222%2C%203%29%20keeping%20my%20existing%20automation%20logic.%20Do%20NOT%20add%20puppeteer-stealth%20or%20JS%20fingerprint%20patches%20%E2%80%94%20Fortress%20spoofs%20the%20fingerprint%20in%20the%20engine%27s%20C%2B%2B.) [![Ask Claude](https://img.shields.io/badge/Ask-Claude-D97757?logo=claude&logoColor=white)](https://claude.ai/new?q=Help%20me%20set%20up%20Fortress%2C%20an%20open-source%20stealth%20Chromium%20engine%2C%20for%20my%20browser%20automation.%20First%20read%20the%20setup%20guide%20at%20https%3A%2F%2Fgithub.com%2Ftiliondev%2Ffortress%2Fblob%2Fmain%2FAGENTS.md%20then%20walk%20me%20through%3A%201%29%20launching%20Fortress%20%28Docker%3A%20docker%20run%20-d%20--rm%20-p%209222%3A9222%20tilion%2Ffortress%3Alatest%2C%20or%20pip%2Fnpm%20install%20tilion-fortress%29%2C%202%29%20connecting%20my%20Playwright%20or%20Puppeteer%20code%20over%20CDP%20to%20http%3A%2F%2Flocalhost%3A9222%2C%203%29%20keeping%20my%20existing%20automation%20logic.%20Do%20NOT%20add%20puppeteer-stealth%20or%20JS%20fingerprint%20patches%20%E2%80%94%20Fortress%20spoofs%20the%20fingerprint%20in%20the%20engine%27s%20C%2B%2B.) [![Ask Gemini](https://img.shields.io/badge/Ask-Gemini-1C69FF?logo=googlegemini&logoColor=white)](https://gemini.google.com/app?q=Help%20me%20set%20up%20Fortress%2C%20an%20open-source%20stealth%20Chromium%20engine%2C%20for%20my%20browser%20automation.%20First%20read%20the%20setup%20guide%20at%20https%3A%2F%2Fgithub.com%2Ftiliondev%2Ffortress%2Fblob%2Fmain%2FAGENTS.md%20then%20walk%20me%20through%3A%201%29%20launching%20Fortress%20%28Docker%3A%20docker%20run%20-d%20--rm%20-p%209222%3A9222%20tilion%2Ffortress%3Alatest%2C%20or%20pip%2Fnpm%20install%20tilion-fortress%29%2C%202%29%20connecting%20my%20Playwright%20or%20Puppeteer%20code%20over%20CDP%20to%20http%3A%2F%2Flocalhost%3A9222%2C%203%29%20keeping%20my%20existing%20automation%20logic.%20Do%20NOT%20add%20puppeteer-stealth%20or%20JS%20fingerprint%20patches%20%E2%80%94%20Fortress%20spoofs%20the%20fingerprint%20in%20the%20engine%27s%20C%2B%2B.) [![Copy for agent](https://img.shields.io/badge/Copy%20for%20agent-full%20context-24292f?logo=readme&logoColor=white)](https://raw.githubusercontent.com/tiliondev/fortress/main/AGENTS.md)
 
-**Option 2 — copy this prompt into your coding agent** (Cursor, Claude Code, Copilot, or any agent). Hit the copy icon in the **top-right of the box**, paste it into the agent, and it does the rest:
+**Option 2 — Copy for agent (everything, to your clipboard).** Hit the copy icon at the **top-right of the box** below — it puts the *entire* setup context (what it is, install, connect, persona, rules — all of [AGENTS.md](AGENTS.md) condensed) on your clipboard. Paste it into Cursor, Claude Code, Copilot, ChatGPT, or any agent and it takes it from there:
 
 ```text
-Set up Fortress (open-source stealth Chromium) for my browser automation.
-1. Launch:  docker run -d --rm -p 9222:9222 tilion/fortress:latest
-2. Connect my Playwright/Puppeteer code over CDP to http://localhost:9222
-   (Python: chromium.connect_over_cdp("http://localhost:9222")
-    Node:   puppeteer.connect({ browserURL: "http://localhost:9222" }))
-3. Keep my existing automation logic — just point the browser at that endpoint.
-Do NOT add puppeteer-stealth or JS fingerprint patches — Fortress spoofs the fingerprint in the
-engine's C++; extra JS patching self-reveals and undoes it. If a site still blocks me, it's the IP
-(datacenter), not the fingerprint — route egress through a residential proxy.
-Reference: https://github.com/tiliondev/fortress/blob/main/AGENTS.md
+You're setting up Fortress, an open-source STEALTH Chromium engine, for browser automation.
+It corrects the browser fingerprint (canvas, WebGL, audio, fonts, navigator, +30 more) in Chromium's
+C++ and exposes raw CDP on http://localhost:9222 — a drop-in for Playwright/Puppeteer. Do NOT add
+puppeteer-stealth or any JS fingerprint patching (it self-reveals and undoes Fortress).
+
+LAUNCH (pick one; all expose CDP on http://localhost:9222):
+  Docker:  docker run -d --rm -p 9222:9222 tilion/fortress:latest
+  Python:  pip install tilion-fortress    then  from tilion_fortress import Fortress; f=Fortress(); f.start()
+  Node:    npm install tilion-fortress    then  import {Fortress} from "tilion-fortress"; const f=await Fortress.launch()
+
+CONNECT (keep my existing automation code):
+  Playwright(py):  browser = p.chromium.connect_over_cdp("http://localhost:9222")
+  Playwright(js):  const browser = await chromium.connectOverCDP("http://localhost:9222")
+  Puppeteer(js):   const browser = await puppeteer.connect({ browserURL: "http://localhost:9222" })
+  browser-use / Crawl4AI / Stagehand / LangChain:  point their CDP endpoint at http://localhost:9222
+
+PERSONA (optional; default is a coherent Windows identity) — override any surface with --uxr-* flags:
+  --uxr-timezone=America/New_York --uxr-hw-concurrency=16 --uxr-languages=en-US,en
+
+RULES:
+  1) Drive over raw CDP (:9222); don't spawn chromedriver.
+  2) Never pass --user-agent (use --uxr-ua-*) — it desyncs UA vs UA-Client-Hints.
+  3) No puppeteer-stealth / undetected-chromedriver / JS fingerprint patches.
+  4) Blocked ~90% = my IP (datacenter), not the fingerprint — use a residential/mobile proxy, then retry.
+
+Now walk me through launching Fortress and wiring my automation to it.
+Full guide: https://github.com/tiliondev/fortress/blob/main/AGENTS.md
 ```
 
 ---
