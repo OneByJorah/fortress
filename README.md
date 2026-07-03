@@ -3,9 +3,11 @@
 <img alt="Fortress" src="docs/assets/banner-fortress.png" width="100%">
 
 
-### Stealth Chromium engine
+### One browser engine to rule them all
 
-**The fingerprint fix is compiled into Chromium's C++, not bolted on in JavaScript.** A JS stealth patch self-reveals: the page checks whether a getter is native code and catches the override. Fortress corrects the fingerprint in the engine, so a page inspecting itself sees stock Chrome. Keep the Playwright or Puppeteer setup you already run.
+Stealth Chromium engine
+
+**Fortress is a stealth Chromium engine that stops your scrapers and browser agents from getting blocked, with one line of code change.** Bot detectors flag automation by reading the browser fingerprint; Fortress corrects that fingerprint inside Chromium's C++, so the browser presents as an ordinary Chrome install. Scrapers finish their runs, agents reach the pages they were sent to, and CreepJS, Sannysoft, BrowserScan, and live Cloudflare Turnstile all read it as human. Point your existing Playwright or Puppeteer at Fortress over CDP, and nothing else in your code changes.
 
 <sub>**Blink · V8 · BoringSSL** patched in-tree · **ANGLE / D3D11**-backed WebGL · **JA3/JA4-coherent** TLS · **monthly** upstream rebase · **reproducible, gauntlet-gated** releases</sub>
 
@@ -25,7 +27,7 @@
 <td align="center" width="150"><h3>BSD-3</h3><sub>open engine,<br/>rebuild it yourself</sub></td>
 </tr></table>
 
-<img src="docs/assets/demo.gif" alt="Fortress clearing a live Cloudflare challenge, then passing sannysoft and BrowserScan" width="720"/>
+<p align="center"><img src="docs/assets/demo.gif" alt="Fortress clearing a live Cloudflare challenge, then passing sannysoft and BrowserScan" width="720"/></p>
 
 <sub><i>Unedited capture of the Fortress binary in a real window: it clears a live <b>Cloudflare</b> challenge, turns <b>bot.sannysoft.com</b> all green, then reads <b>BrowserScan</b> “Normal”. Reproduce with <code>tools/gauntlet.py</code>.</i></sub>
 
@@ -97,7 +99,7 @@ Fortress is a Chromium fork that spoofs the browser fingerprint from inside the 
 
 It ships as an ordinary browser binary that exposes a CDP endpoint. Point Playwright, Puppeteer, or any CDP client at it and your existing automation runs unchanged.
 
-A JavaScript stealth patch leaves an extra layer the page can find: `.toString()` shows the override's source, and re-grabbing the same primitive from an iframe or worker reaches past it. Fortress corrects the surface in the engine instead, so `navigator.vendor` resolves to the real C++ getter, reports `[native code]`, and reads the same from every realm. A page inspecting itself sees stock Chromium. In practice it clears CreepJS, Sannysoft, BrowserScan, and live Cloudflare Turnstile as a normal Chrome install, and whatever blocking is left traces to your proxies and behavior. [Why patch the engine, not the page](#why-patch-the-engine-not-the-page) covers the detection mechanics in full.
+A JavaScript stealth patch leaves an extra layer the page can find: `.toString()` shows the override's source, and re-grabbing the same primitive from an iframe or worker reaches past it. Fortress corrects the surface in the engine instead, so `navigator.vendor` resolves to the real C++ getter, reports `[native code]`, and reads the same from every realm. A page inspecting itself sees stock Chromium. That is why your automation gets through where it used to get flagged, and whatever blocking is left traces to your proxies and behavior rather than the browser. [Why patch the engine, not the page](#why-patch-the-engine-not-the-page) covers the detection mechanics in full.
 
 ```python
 from tilion_fortress import Fortress
@@ -462,7 +464,7 @@ BSD-3-Clause for the Fortress patches and tooling (matching Chromium). Chromium 
 
 ### Staying current
 
-Fortress rebases onto Chromium monthly, re-runs the gauntlet, and ships a patch whenever a detector finds a new tell. [Watch the releases](https://github.com/tiliondev/fortress/releases) to follow the `v2` MaskConfig work, or [star the repo](https://github.com/tiliondev/fortress/stargazers) if it's useful to you.
+Detection keeps moving, so a stealth engine is only as good as its last rebase. Fortress tracks the latest Chromium monthly, re-runs the full gauntlet, and ships a patch whenever a detector finds a new tell, so what you run keeps matching what a real Chrome install looks like. [Watch the releases](https://github.com/tiliondev/fortress/releases) to follow the `v2` MaskConfig work, or [star the repo](https://github.com/tiliondev/fortress/stargazers) if it's useful to you.
 
 <a href="https://star-history.com/#tiliondev/fortress&Date">
   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=tiliondev/fortress&type=Date" width="600"/>
