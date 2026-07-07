@@ -467,6 +467,15 @@ docs/        GAUNTLET_RESULTS, BUILD_NATIVE, BENCHMARK
 
 Found a detection vector or a leak we missed? Open an issue with a reproducible test page. A page that reliably flags Fortress is the most valuable thing you can send. It becomes the next patch. Two house rules: every capability claim ships with a command that reproduces it, and every limit is written down. **The word "undetectable" stays out of the repo.**
 
+### 🔀 Fork Notes
+
+This repository is a fork of [tiliondev/fortress](https://github.com/tiliondev/fortress) maintained by **OneByJorah**.
+
+**Changes from upstream:**
+- Added `.env.example` with CDP endpoint and persona configuration
+- `Dockerfile` already present in `packaging/`
+- No `docker-compose.yml` (Docker usage is straightforward: `docker run --rm -p 9222:9222 tilion/fortress:latest`)
+
 ### License
 
 BSD-3-Clause for the Fortress patches and tooling (matching Chromium). Chromium and the bundled fonts retain their own licenses; see [LICENSE](LICENSE) and [NOTICE](NOTICE). The patch series is published, so you can audit and rebuild the engine yourself.
