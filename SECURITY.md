@@ -1,34 +1,36 @@
 # Security Policy
 
-## What counts as what
+## Reporting a Vulnerability
 
-Fortress is a stealth Chromium engine, so please route two very different things to two
-different places:
+If you discover a security vulnerability, please report it responsibly:
 
-- **A detection vector** — a page or script that fingerprints Fortress and tells it apart from
-  real Chrome — is **not** a security vulnerability. It is exactly what the project wants, and it
-  belongs in a **public issue** (use the "Detection vector" template). The more reproducible, the
-  better.
-- **A vulnerability in Fortress itself** — a way to crash the binary, escape the sandbox, leak the
-  host (files, environment, real IP outside the configured proxy), or compromise a machine running
-  it — is a **security issue**. Report it **privately** (below), not in a public issue.
+**DO NOT** open a public GitHub issue for security vulnerabilities.
 
-## Reporting a vulnerability
+Instead, please email: **info@jorahone.com**
 
-Please use **GitHub's private vulnerability reporting**: the **Security** tab of this repository →
-**Report a vulnerability**. That keeps the report private to the maintainers while it is triaged.
+Include:
+- Description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Suggested fix (if any)
 
-Include, as far as you can:
+## Response Timeline
 
-- affected version (Docker tag, `pip`/`npm` version, or bundle + Chromium version from `CHROMIUM_VERSION`),
-- the platform, and
-- a minimal reproduction and the impact.
+- **Acknowledgment**: Within 48 hours
+- **Initial assessment**: Within 1 week
+- **Fix timeline**: Depends on severity
 
-We aim to acknowledge a report within a few days and to keep you updated as we work on a fix.
-Please give us a reasonable window to release a fix before disclosing publicly.
+## Supported Versions
 
-## Supported versions
+| Version | Supported |
+|---------|-----------|
+| Latest  | ✅ Yes    |
+| Older   | ❌ No     |
 
-Fortress tracks stable Chromium and is released from the tip of `main`. Security fixes land on the
-**latest** release; older tagged releases are not maintained. Always verify a download against the
-release `SHA256SUMS` (the `pip`/`npm` SDKs do this automatically).
+## Security Best Practices
+
+When deploying our projects:
+- Use environment variables for secrets
+- Enable HTTPS in production
+- Keep dependencies updated
+- Follow principle of least privilege
