@@ -1,29 +1,25 @@
 <div align="center">
-  <img src="https://img.shields.io/badge/Chromium-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white">
-  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white">
-  <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge">
-</div>
 
-<br>
+![fortress banner](docs/assets/banner.svg)
 
-<div align="center">
-  <h1>fortress</h1>
-  <p><strong>Stealth Chromium Engine</strong></p>
-  <p>Stops scrapers and browser agents from getting blocked, with one line of code change.</p>
-  <p>
-    <a href="#features">Features</a> •
-    <a href="#quick-start">Quick Start</a> •
-    <a href="#how-it-works">How It Works</a> •
-    <a href="#contributing">Contributing</a>
-  </p>
+# fortress
+
+Stealth Chromium engine that stops scrapers and browser agents from getting blocked
+
+![License](https://img.shields.io/badge/license-OTHER-brightgreen)
+![Language](https://img.shields.io/badge/language-Python-blue)
+![Fork](https://img.shields.io/badge/status-fork-orange)
 </div>
 
 ---
 
-## Screenshot
+<p align="center">
+  <img src="docs/assets/screenshot.png" alt="fortress preview" width="90%">
+</p>
 
-![fortress Architecture](docs/screenshot.png)
-*Stealth Chromium engine for bypassing bot detection.*
+<br>
+
+---
 
 ## Features
 
@@ -41,7 +37,6 @@
 ### Playwright
 
 ```python
-# Before
 from playwright.sync_api import sync_playwright
 
 # After (one line change)
@@ -135,7 +130,18 @@ MIT © Jhonattan L. Jimenez
 
 ---
 
-<div align="center">
-  <p>Stealth Chromium for bot detection bypass.</p>
-  <p><a href="https://github.com/OneByJorah">@OneByJorah</a></p>
-</div>
+## 🤝 Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). All contributions follow the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## 🔒 Security
+
+Found a vulnerability? Please follow our [Security Policy](SECURITY.md) and report privately to `security@jorahone.com`.
+
+## 📄 License
+
+[Other](LICENSE) © Jhonattan L. Jimenez (OneByJorah)
+
+---
+
+<p align="center">Built with 🌴 by <a href="https://github.com/OneByJorah">OneByJorah</a> · <a href="https://jorahone.com">jorahone.com</a></p>

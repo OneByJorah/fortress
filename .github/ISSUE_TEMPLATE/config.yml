@@ -1,8 +1,8 @@
-blank_issues_enabled: false
+blank_issues_enabled: true
 contact_links:
+  - name: Ask a question
+    url: https://github.com/OneByJorah/OneByJorah/discussions
+    about: Please use Discussions for general questions and help.
   - name: Security vulnerability
-    url: https://github.com/tiliondev/fortress/security/advisories/new
-    about: Report a crash, sandbox escape, or host leak privately (see SECURITY.md) — not a public issue.
-  - name: Question or usage help
-    url: https://github.com/tiliondev/fortress/discussions
-    about: Ask how to set Fortress up or drive it — see AGENTS.md first.
+    url: https://github.com/OneByJorah/.github/blob/main/SECURITY.md
+    about: Please report security issues privately per our Security Policy.

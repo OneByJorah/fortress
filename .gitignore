@@ -36,3 +36,6 @@ venv/
 # OS cruft
 .DS_Store
 Thumbs.db
+
+# OneByJorah portfolio tooling
+.venv-screenshot/
